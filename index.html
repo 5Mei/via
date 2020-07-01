@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -527,9 +528,8 @@ body {
 </div>
 
 <div class="box">
-<a href="https://www.moe123.net/sites#("></a>
-<p><img class="icon" src="img/Wikipedia.png" ></p>
-<p class="url">导航</p>
+<input name="按钮" type="image" onClick="getDate()" value="按钮" class="icon" src="img/Wikipedia.png"></input>
+
 </div>
 
 <div class="box">
@@ -556,7 +556,6 @@ body {
 图标文件放置在img文件夹中定义如src="img/icon6.png"
 显示的标题在<p class="url">书签名称</p>之间定义如<p class="url">酷安</p>
 下方window.location.href =主页搜索引擎地址，目前为自用Pc版百度内部搜索，加上浏览器的顶部搜索即为双搜索，使用更方便
-
 -->
 <br>
 <script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><div id="lwlhitokoto"><script>lwlhitokoto()</script></div>
@@ -584,7 +583,6 @@ ajax.onreadystatechange=function()
 ajax.open('GET',url, true);
 ajax.send();
 }
-
 else{
     var count=Math.floor(Math.random()*hit.length);
     var ran=hit[count];
@@ -696,5 +694,18 @@ document.getElementById('suglist').addEventListener('click', function(e) {
 });
 window.addEventListener('resize', move_input);
 </script>
+	
+<script type="text/javascript">
+    function getDate() {
+        let today = new Date();
+        // console.log(today):  Wed Jul 17 2019 17:48:53 GMT+0800 (中国标准时间)
+        let newDate = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate() + ' ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+        // getMonth方法返回的是0-11之间的数字，代表1-12月份，若想和日历的月份时间对应，需要+1。
+        return newDate;
+    }
+    document.write(getDate());
+    // date: 2019/7/17 5:48:53
+</script>
 </body>
 </html>
+
